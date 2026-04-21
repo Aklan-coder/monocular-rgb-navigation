@@ -1,0 +1,2 @@
+Lateral_correlation_r,Velocity_correlation_r,Direction_agreement_pct,Depth_range_lost_mm,Distance_MAE_mm,Distance_RMSE_mm,False_negative_pct,False_positive_pct
+0.9436,-0.1663,26.2,5255.76,1198.22,1501.98,0.0,64.96

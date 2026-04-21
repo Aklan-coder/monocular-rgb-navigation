@@ -1,0 +1,4 @@
+Axis,RMSE_mm,MAE_mm,MaxError_mm,Correlation
+Lateral (X),118.43,84.65,675.94,0.962
+Height (Y),19.11,14.43,70.92,0.323
+Depth (Z),711.46,473.4,4308.51,0.7666

@@ -1,0 +1,37 @@
+Axis,Method,Horizon(s),RMSE (mm),MAE (mm)
+Horizontal Position,CV  (OptiTrack),0.5,144.0,103.08
+Horizontal Position,CV  (RGB),0.5,539.05,376.08
+Horizontal Position,KF  (OptiTrack),0.5,180.36,137.12
+Horizontal Position,KF  (RGB),0.5,214.48,146.22
+Horizontal Position,CV  (OptiTrack),1.0,305.48,240.55
+Horizontal Position,CV  (RGB),1.0,1077.41,759.49
+Horizontal Position,KF  (OptiTrack),1.0,328.77,261.76
+Horizontal Position,KF  (RGB),1.0,369.72,278.68
+Horizontal Position,CV  (OptiTrack),2.0,637.93,512.15
+Horizontal Position,CV  (RGB),2.0,2165.08,1534.42
+Horizontal Position,KF  (OptiTrack),2.0,666.37,540.35
+Horizontal Position,KF  (RGB),2.0,688.76,530.77
+Distance from Camera,CV  (OptiTrack),0.5,405.14,144.93
+Distance from Camera,CV  (RGB),0.5,2206.14,1218.58
+Distance from Camera,KF  (OptiTrack),0.5,570.16,391.48
+Distance from Camera,KF  (RGB),0.5,435.41,282.53
+Distance from Camera,CV  (OptiTrack),1.0,604.33,296.01
+Distance from Camera,CV  (RGB),1.0,4402.6,2419.67
+Distance from Camera,KF  (OptiTrack),1.0,1002.21,759.89
+Distance from Camera,KF  (RGB),1.0,724.02,511.44
+Distance from Camera,CV  (OptiTrack),2.0,934.95,581.15
+Distance from Camera,CV  (RGB),2.0,8802.17,4787.44
+Distance from Camera,KF  (OptiTrack),2.0,1887.36,1445.38
+Distance from Camera,KF  (RGB),2.0,1239.9,930.06
+Vertical Position,CV  (OptiTrack),0.5,51.09,42.64
+Vertical Position,CV  (RGB),0.5,20.44,13.03
+Vertical Position,KF  (OptiTrack),0.5,21.15,17.22
+Vertical Position,KF  (RGB),0.5,13.19,6.5
+Vertical Position,CV  (OptiTrack),1.0,90.01,73.58
+Vertical Position,CV  (RGB),1.0,38.28,25.54
+Vertical Position,KF  (OptiTrack),1.0,30.51,24.87
+Vertical Position,KF  (RGB),1.0,21.58,12.52
+Vertical Position,CV  (OptiTrack),2.0,180.04,146.63
+Vertical Position,CV  (RGB),2.0,73.72,49.7
+Vertical Position,KF  (OptiTrack),2.0,41.52,32.96
+Vertical Position,KF  (RGB),2.0,36.92,24.17

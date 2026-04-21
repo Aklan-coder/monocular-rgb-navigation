@@ -1,0 +1,10 @@
+Axis,Prediction Horizon (s),RMSE (mm),MAE (mm)
+Horizontal Position,0.5,246.24,175.78
+Horizontal Position,1.0,389.27,302.64
+Horizontal Position,2.0,718.88,586.2
+Distance from Camera,0.5,810.2,472.16
+Distance from Camera,1.0,1005.02,693.25
+Distance from Camera,2.0,1529.42,1308.12
+Vertical Position,0.5,23.18,16.33
+Vertical Position,1.0,26.8,18.09
+Vertical Position,2.0,36.26,24.55

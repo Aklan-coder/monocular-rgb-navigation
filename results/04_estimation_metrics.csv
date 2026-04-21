@@ -1,0 +1,4 @@
+Axis,RMSE (mm),MAE (mm),Correlation
+Horizontal Position,118.43,84.65,0.962
+Distance from Camera,711.46,473.4,0.7666
+Vertical Position,19.11,14.43,0.323
