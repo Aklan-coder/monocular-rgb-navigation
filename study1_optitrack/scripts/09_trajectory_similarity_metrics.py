@@ -1,5 +1,4 @@
 import sys
-sys.path.insert(0, '/home/ataiwo/sandbox/packages')
 
 import os
 import pandas as pd
@@ -12,9 +11,12 @@ from sklearn.linear_model import LinearRegression
 # -----------------------------
 # Paths
 # -----------------------------
-csv_path = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/paired_dataset.csv"
-out_dir = "/home/ataiwo/sandbox/NEWDATA ROBOTICS"
-os.makedirs(out_dir, exist_ok=True)
+csv_path = "data/paired_dataset.csv"
+fig_dir = "outputs/figures"
+metrics_dir = "outputs/metrics"
+data_dir = "data"
+for d in (fig_dir, metrics_dir, data_dir):
+    os.makedirs(d, exist_ok=True)
 
 # -----------------------------
 # Load data
@@ -147,7 +149,7 @@ metrics = pd.DataFrame([{
     "False_Unsafe_Rate": false_unsafe_rate
 }])
 
-metrics_path = os.path.join(out_dir, "trajectory_metrics_summary.csv")
+metrics_path = os.path.join(metrics_dir, "trajectory_metrics_summary.csv")
 metrics.to_csv(metrics_path, index=False)
 
 # -----------------------------
@@ -165,7 +167,7 @@ aligned_out["dist_ref_px"] = dist_ref
 aligned_out["dist_est_px"] = dist_est
 aligned_out["distance_error_px"] = distance_error
 
-aligned_path = os.path.join(out_dir, "aligned_motion_data.csv")
+aligned_path = os.path.join(data_dir, "aligned_motion_data.csv")
 aligned_out.to_csv(aligned_path, index=False)
 
 # -----------------------------
@@ -207,7 +209,7 @@ plt.legend()
 plt.axis("equal")
 plt.grid(True)
 
-path1 = os.path.join(out_dir, "01_aligned_trajectories.png")
+path1 = os.path.join(fig_dir, "01_aligned_trajectories.png")
 plt.tight_layout()
 plt.savefig(path1, dpi=300, bbox_inches="tight")
 plt.close()
@@ -225,7 +227,7 @@ plt.legend()
 plt.axis("equal")
 plt.grid(True)
 
-path2 = os.path.join(out_dir, "02_normalized_trajectories.png")
+path2 = os.path.join(fig_dir, "02_normalized_trajectories.png")
 plt.tight_layout()
 plt.savefig(path2, dpi=300, bbox_inches="tight")
 plt.close()
@@ -240,7 +242,7 @@ plt.xlabel("Time (s)")
 plt.ylabel("Position error (px)")
 plt.grid(True)
 
-path3 = os.path.join(out_dir, "03_temporal_error_profile.png")
+path3 = os.path.join(fig_dir, "03_temporal_error_profile.png")
 plt.tight_layout()
 plt.savefig(path3, dpi=300, bbox_inches="tight")
 plt.close()
@@ -257,7 +259,7 @@ plt.ylabel("Velocity (px/s)")
 plt.legend()
 plt.grid(True)
 
-path4 = os.path.join(out_dir, "04_velocity_comparison.png")
+path4 = os.path.join(fig_dir, "04_velocity_comparison.png")
 plt.tight_layout()
 plt.savefig(path4, dpi=300, bbox_inches="tight")
 plt.close()
@@ -273,7 +275,7 @@ plt.ylabel("Cosine similarity")
 plt.ylim(-1.05, 1.05)
 plt.grid(True)
 
-path5 = os.path.join(out_dir, "05_velocity_consistency.png")
+path5 = os.path.join(fig_dir, "05_velocity_consistency.png")
 plt.tight_layout()
 plt.savefig(path5, dpi=300, bbox_inches="tight")
 plt.close()
@@ -289,7 +291,7 @@ plt.ylabel("Cosine similarity")
 plt.ylim(-1.05, 1.05)
 plt.grid(True)
 
-path6 = os.path.join(out_dir, "06_direction_similarity.png")
+path6 = os.path.join(fig_dir, "06_direction_similarity.png")
 plt.tight_layout()
 plt.savefig(path6, dpi=300, bbox_inches="tight")
 plt.close()
@@ -304,7 +306,7 @@ plt.xlabel("Time (s)")
 plt.ylabel("Acceleration magnitude")
 plt.grid(True)
 
-path7 = os.path.join(out_dir, "07_jitter.png")
+path7 = os.path.join(fig_dir, "07_jitter.png")
 plt.tight_layout()
 plt.savefig(path7, dpi=300, bbox_inches="tight")
 plt.close()
@@ -319,7 +321,7 @@ plt.xlabel("Time (s)")
 plt.ylabel("Absolute distance error (px)")
 plt.grid(True)
 
-path8 = os.path.join(out_dir, "08_distance_error.png")
+path8 = os.path.join(fig_dir, "08_distance_error.png")
 plt.tight_layout()
 plt.savefig(path8, dpi=300, bbox_inches="tight")
 plt.close()
@@ -337,7 +339,7 @@ plt.ylabel("Distance (px)")
 plt.legend()
 plt.grid(True)
 
-path9 = os.path.join(out_dir, "09_safety_margin.png")
+path9 = os.path.join(fig_dir, "09_safety_margin.png")
 plt.tight_layout()
 plt.savefig(path9, dpi=300, bbox_inches="tight")
 plt.close()
@@ -353,7 +355,7 @@ plt.xlabel("X (px)")
 plt.ylabel("Y (px)")
 plt.grid(True)
 
-path10 = os.path.join(out_dir, "10_error_heatmap.png")
+path10 = os.path.join(fig_dir, "10_error_heatmap.png")
 plt.tight_layout()
 plt.savefig(path10, dpi=300, bbox_inches="tight")
 plt.close()

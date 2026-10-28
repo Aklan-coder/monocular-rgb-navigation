@@ -1,12 +1,5 @@
 import sys
-sys.path.insert(0, '/home/ataiwo/sandbox/packages')
 
-import subprocess
-subprocess.run([
-    sys.executable, '-m', 'pip', 'install',
-    'matplotlib', 'scipy', 'pandas', 'numpy',
-    '--target', '/home/ataiwo/sandbox/packages', '--quiet'
-], check=True)
 
 import pandas as pd
 import numpy as np
@@ -19,8 +12,8 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # ─────────────────────────────────────────────
-INPUT_FILE  = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/paired_dataset.csv"
-OUTPUT_DIR  = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/evaluation"
+INPUT_FILE  = "data/paired_dataset.csv"
+OUTPUT_DIR  = "outputs/evaluation"
 import os
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

@@ -10,7 +10,6 @@ Evaluation design:
   - Horizons: 0.5s, 1.0s, 2.0s
 """
 import sys
-sys.path.insert(0, '/home/ataiwo/sandbox/packages')
 
 import numpy as np
 import pandas as pd
@@ -20,8 +19,8 @@ from pathlib import Path
 # ═══════════════════════════════════════════════════════════════
 # CONFIG
 # ═══════════════════════════════════════════════════════════════
-INPUT_CSV         = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/paired_dataset.csv"
-OUT_DIR           = Path("/home/ataiwo/sandbox/NEWDATA ROBOTICS/results_final")
+INPUT_CSV         = "data/paired_dataset.csv"
+OUT_DIR           = Path("outputs/results_final")
 OUT_DIR.mkdir(exist_ok=True)
 
 W, H              = 1920, 1080

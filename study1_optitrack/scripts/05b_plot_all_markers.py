@@ -1,11 +1,5 @@
 import sys
-sys.path.insert(0, '/home/ataiwo/sandbox/packages')
 
-import subprocess
-subprocess.run([
-    sys.executable, '-m', 'pip', 'install',
-    'matplotlib', '--target', '/home/ataiwo/sandbox/packages', '--quiet'
-], check=True)
 
 import pandas as pd
 import numpy as np
@@ -16,8 +10,8 @@ from mpl_toolkits.mplot3d import Axes3D
 import warnings
 warnings.filterwarnings('ignore')
 
-INPUT_FILE   = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/opti_aligned.csv"
-OUTPUT_DIR   = "/home/ataiwo/sandbox/Robotics/marker_trajectories"
+INPUT_FILE   = "data/opti_aligned.csv"
+OUTPUT_DIR   = "outputs/marker_trajectories"
 
 import os
 os.makedirs(OUTPUT_DIR, exist_ok=True)

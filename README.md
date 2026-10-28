@@ -1,84 +1,28 @@
+# Decision-Level Safety Evaluation of Monocular RGB Human Tracking for Robot Navigation
 
----
+**Abdulahi Taiwo** · University of South Carolina · with Chijioke C. Ekechi
 
-## Research Extension: Pedestrian Perception and Safety (Summer 2026)
+Accuracy metrics such as RMSE do not say whether a perception error changes a robot's stop/proceed decision. This repository evaluates monocular RGB human tracking by the decisions it drives, in two studies.
 
-**Research Assistant | University of South Carolina | Advisor: Dr. Lewis**
+| | Study 1 (published) | Study 2 (extension, in preparation) |
+|---|---|---|
+| Question | Is a monocular RGB pipeline safe enough to drive stop/proceed decisions? | *Why* does it fail, and how much is the rule vs. perception? |
+| Data | 1 participant, OptiTrack (125 Hz) + overhead RGB (120 Hz), 80 s | ETH/UCY pedestrian video, 898 pedestrians, 3 scenes |
+| Pipeline | YOLOv8-Pose → geometric depth → Kalman filter | Same chain + ground-plane and Depth Anything V2 localisers |
+| Key result | 0.0% missed dangers, but 65.0% unnecessary stops | Proof that the lateral rule lower-bounds planar distance; missed detections drive most missed dangers |
+| Paper | [SSRN 7439432](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7439432) | Manuscript under preparation |
+| Code | [`study1_optitrack/`](study1_optitrack/) — complete, reproduces the paper's numbers | [`study2_eth_ucy/`](study2_eth_ucy/) — results summary; code being consolidated |
 
-This research extends the original vision-based human motion prediction study by investigating pedestrian localization, uncertainty-aware safety decisions, and the relationship between perception errors and robot navigation behavior.
+Study 2 grew directly out of Study 1's limitations: Study 1 found the asymmetry (no misses, many false stops) but could not explain it from a single participant.
 
-Unlike the original OptiTrack-based experiment, this extension evaluates pedestrian motion using the ETH/UCY benchmark.
+## Layout
 
-### Research Objectives
-
-1. Evaluate pedestrian localization accuracy against geometric and learned-depth baselines.
-2. Investigate how localization uncertainty affects human–robot safety decisions.
-3. Develop and analyze a lateral-only distance rule for conservative safety assessment.
-4. Determine whether uncertainty margins can reduce unnecessary robot stops without increasing missed-danger cases.
-
-### Experimental Setup
-
-- **Dataset:** ETH/UCY pedestrian trajectories.
-- **Evaluation population:** 898 pedestrians.
-- **Method:** YOLOv8-Pose and Kalman-filter-based perception pipeline.
-- **Evaluation protocol:** Leakage-free dataset splits.
-- **Baselines:** Geometric localization and Depth Anything V2.
-- **Metrics:** Planar localization RMSE, missed-danger cases, and unnecessary robot stops.
-
-### Localization Results
-
-| Method | Planar Localization RMSE |
-|---|---:|
-| Geometric localization | 1.39–1.72 m |
-| Depth Anything V2 | 0.68–0.81 m |
-| Evaluated perception approach | **0.51–0.59 m** |
-
-The evaluated approach achieved lower planar localization error than the reported geometric and Depth Anything V2 baselines.
-
-### Lateral-Only Safety Rule
-
-Established a lateral-only distance rule that provides a mathematical lower bound on planar human–robot distance.
-
-The research also used Shapley attribution to analyze the contribution of different error sources to downstream safety decisions.
-
-### Uncertainty-Aware Safety Evaluation
-
-A 2σ uncertainty margin was evaluated across eight cases.
-
-**Observed results:**
-
-- Matched the lateral-only rule's missed-danger rate in 8 out of 8 evaluated cases.
-- Reduced unnecessary robot stops in 7 out of 8 evaluated cases.
-
-These findings suggest that incorporating uncertainty into safety decisions can reduce unnecessary stopping while preserving the evaluated rule's missed-danger performance.
-
-### Relationship to the Original Study
-
-The original CSCE 574 study demonstrated that relatively accurate lateral tracking could coexist with poor depth estimates and unreliable downstream safety decisions.
-
-This extension investigates more accurate localization and conservative safety-decision methods.
-
-The experiments use different datasets and evaluation protocols and should not be interpreted as a direct comparison between the original OptiTrack study and the ETH/UCY extension.
-
-### Research Limitations
-
-- The safety results cover eight evaluated cases and do not establish universal safety guarantees.
-- The localization comparisons depend on the reported dataset and evaluation protocol.
-- The extension does not establish that the method will generalize to every robot navigation environment.
-
----
-
-## Future Research
-
-A proposed next direction is decision-aware selective depth estimation for human-aware robot navigation.
-
-The proposed system would invoke additional depth estimation when uncertainty could change a downstream robot safety decision.
-
-Potential evaluation directions include:
-
-- RGB-only versus always-depth versus selectively activated depth.
-- Safety quality versus computational cost.
-- Depth invocation rate and processing latency.
-- Generalization to additional robot-perspective datasets.
-
-These are proposed future investigations, not completed experimental results.
+```
+study1_optitrack/
+  scripts/   numbered pipeline, 01 → 09
+  data/      raw OptiTrack export and intermediate CSVs
+  outputs/   results_final/ (paper numbers), evaluation/, metrics/, figures/
+  paper/     course report for the original study
+study2_eth_ucy/
+  README.md  method, results and code status
+```

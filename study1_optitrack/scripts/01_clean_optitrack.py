@@ -1,7 +1,7 @@
 import pandas as pd
 
-input_path = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/Take 2026-04-10 01.50.05 PM DATA1.csv"
-output_path = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/opti_clean.csv"
+input_path = "data/Take 2026-04-10 01.50.05 PM DATA1.csv"
+output_path = "data/opti_clean.csv"
 
 # Your OptiTrack file has several metadata rows before the real table header.
 # In the file you showed, the actual data header starts on the row:

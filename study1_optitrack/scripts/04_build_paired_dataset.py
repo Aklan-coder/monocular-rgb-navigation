@@ -1,5 +1,4 @@
 import sys
-sys.path.insert(0, '/home/ataiwo/sandbox/packages')
 
 import pandas as pd
 import numpy as np
@@ -9,9 +8,9 @@ warnings.filterwarnings('ignore')
 # ─────────────────────────────────────────────
 # CONFIG
 # ─────────────────────────────────────────────
-OPTI_FILE   = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/opti_aligned.csv"
-RGB_FILE    = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/rgb_pose_extracted.csv"
-OUTPUT_FILE = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/paired_dataset.csv"
+OPTI_FILE   = "data/opti_aligned.csv"
+RGB_FILE    = "data/rgb_pose_extracted.csv"
+OUTPUT_FILE = "data/paired_dataset.csv"
 
 # Your confirmed head markers
 HEAD_MARKERS = ['X.5', 'X.6', 'X.83']
