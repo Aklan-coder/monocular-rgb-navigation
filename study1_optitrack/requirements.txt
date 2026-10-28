@@ -1,0 +1,8 @@
+numpy
+pandas
+matplotlib
+scipy
+scikit-learn
+# only needed for step 2 (pose extraction from the raw video)
+ultralytics
+opencv-python

@@ -12,7 +12,6 @@ Requirements:
     pip install ultralytics opencv-python pandas numpy
 """
 import sys
-sys.path.insert(0, '/home/ataiwo/sandbox/packages')
 
 import cv2
 import numpy as np
@@ -23,9 +22,9 @@ from pathlib import Path
 # ─────────────────────────────────────────────
 # CONFIG
 # ─────────────────────────────────────────────
-VIDEO_PATH     = r"sandbox/NEWDATA ROBOTICS/Take 2026-04-10 01.50.05 PM-Camera 17 (C11559).avi"
-OUTPUT_CSV     = "sandbox/NEWDATA ROBOTICS/rgb_pose_extracted.csv"
-SCREENSHOT_DIR = r"sandbox/Robotics/screenshots"
+VIDEO_PATH     = r"data/Take 2026-04-10 01.50.05 PM-Camera 17 (C11559).avi"  # raw RGB video (not in repo; see README)
+OUTPUT_CSV     = "data/rgb_pose_extracted.csv"
+SCREENSHOT_DIR = "outputs/screenshots"
 SCREENSHOT_EVERY = 30          # 1 screenshot per second at 30fps
 
 TIME_RANGES = [

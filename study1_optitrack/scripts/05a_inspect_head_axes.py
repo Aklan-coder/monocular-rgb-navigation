@@ -1,11 +1,9 @@
 import sys
-sys.path.insert(0, '/home/ataiwo/sandbox/packages')
 """
 3D Plot of OptiTrack Head Trajectory
 - Identifies which axis is height, lateral, depth
 """
 import sys
-sys.path.insert(0, '/home/ataiwo/sandbox/packages')
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -13,9 +11,9 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
 # ── Paths ─────────────────────────────────────────────────────
-CSV_PATH   = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/paired_dataset.csv"
-PLOT_3D    = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/optitrack_3d_trajectory.png"
-PLOT_AXES  = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/optitrack_axes_analysis.png"
+CSV_PATH   = "data/paired_dataset.csv"
+PLOT_3D    = "outputs/figures/optitrack_3d_trajectory.png"
+PLOT_AXES  = "outputs/figures/optitrack_axes_analysis.png"
 
 # ── Load ──────────────────────────────────────────────────────
 df = pd.read_csv(CSV_PATH)

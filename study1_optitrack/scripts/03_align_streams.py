@@ -1,11 +1,11 @@
 import pandas as pd
 
 # Paths
-rgb_path = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/rgb_clean.csv"
-opti_path = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/opti_clean.csv"
+rgb_path = "data/rgb_clean.csv"
+opti_path = "data/opti_clean.csv"
 
-rgb_out = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/rgb_aligned.csv"
-opti_out = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/opti_aligned.csv"
+rgb_out = "data/rgb_aligned.csv"
+opti_out = "data/opti_aligned.csv"
 
 # Load data
 rgb = pd.read_csv(rgb_path)

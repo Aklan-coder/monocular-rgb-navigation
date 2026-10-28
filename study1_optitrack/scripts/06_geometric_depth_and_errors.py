@@ -5,20 +5,19 @@ Full Pipeline v2 — Fixes applied:
   3. Flip RGB nose Y (image Y is downward, OptiTrack Y is upward)
 """
 import sys
-sys.path.insert(0, '/home/ataiwo/sandbox/packages')
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
 # ── Paths ─────────────────────────────────────────────────────
-INPUT_CSV    = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/paired_dataset.csv"
-FILTERED_CSV = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/head_nose_filtered.csv"
-DEPTH_CSV    = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/depth_estimated.csv"
-METRICS_CSV  = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/error_metrics.csv"
-TRAJ_PLOT    = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/trajectory_comparison.png"
-DEPTH_PLOT   = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/depth_comparison.png"
-ERROR_PLOT   = "/home/ataiwo/sandbox/NEWDATA ROBOTICS/error_plot.png"
+INPUT_CSV    = "data/paired_dataset.csv"
+FILTERED_CSV = "data/head_nose_filtered.csv"
+DEPTH_CSV    = "data/depth_estimated.csv"
+METRICS_CSV  = "outputs/metrics/error_metrics.csv"
+TRAJ_PLOT    = "outputs/figures/trajectory_comparison.png"
+DEPTH_PLOT   = "outputs/figures/depth_comparison.png"
+ERROR_PLOT   = "outputs/figures/error_plot.png"
 
 # ── Camera Parameters ─────────────────────────────────────────
 W, H    = 1920, 1080
